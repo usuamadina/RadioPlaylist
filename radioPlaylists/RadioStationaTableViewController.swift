@@ -1,5 +1,5 @@
 //
-//  RadioStationViewController.swift
+//  RadioStationTableViewController.swift
 //  radioPlaylists
 //
 //  Created by labdisca on 18/3/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RadioStationViewController: UITableViewController {
+class RadioStationTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

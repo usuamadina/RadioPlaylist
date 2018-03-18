@@ -1,5 +1,5 @@
 //
-//  FavoritesViewController.swift
+//  FavoritesTableViewController.swift
 //  radioPlaylists
 //
 //  Created by labdisca on 18/3/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FavoritesViewController: UITableViewController {
+class FavoritesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
