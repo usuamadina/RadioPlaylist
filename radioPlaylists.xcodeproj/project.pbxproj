@@ -13,6 +13,16 @@
 		AA47A426205D8D1C00286DD7 /* radioPlaylists.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AA47A424205D8D1C00286DD7 /* radioPlaylists.xcdatamodeld */; };
 		AA47A428205D8D1C00286DD7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA47A427205D8D1C00286DD7 /* Assets.xcassets */; };
 		AA47A42B205D8D1C00286DD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA47A429205D8D1C00286DD7 /* LaunchScreen.storyboard */; };
+		AA47A437205D9EEE00286DD7 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = AA47A436205D9EEE00286DD7 /* star.png */; };
+		AA47A439205E8A6800286DD7 /* GenresTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA47A438205E8A6800286DD7 /* GenresTableViewController.swift */; };
+		AA47A43B205EC8F700286DD7 /* RadioStationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA47A43A205EC8F700286DD7 /* RadioStationTableViewController.swift */; };
+		AA47A43D205EC91900286DD7 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA47A43C205EC91900286DD7 /* FavoritesTableViewController.swift */; };
+		AA47A43F205EDA4600286DD7 /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = AA47A43E205EDA4600286DD7 /* stop.png */; };
+		AA47A441205EDA5600286DD7 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = AA47A440205EDA5600286DD7 /* play.png */; };
+		AA47A443205EDA5C00286DD7 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = AA47A442205EDA5C00286DD7 /* pause.png */; };
+		AA47A4452066BAB200286DD7 /* GenresTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA47A4442066BAB200286DD7 /* GenresTableViewCellController.swift */; };
+		AA59E4672069721D00B4F5A9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA59E4662069721D00B4F5A9 /* DetailViewController.swift */; };
+		AA9DC3DC206816C900D9EF32 /* RadioStationTableViewCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9DC3DB206816C900D9EF32 /* RadioStationTableViewCellController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +34,16 @@
 		AA47A427205D8D1C00286DD7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA47A42A205D8D1C00286DD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AA47A42C205D8D1C00286DD7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA47A436205D9EEE00286DD7 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		AA47A438205E8A6800286DD7 /* GenresTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresTableViewController.swift; sourceTree = "<group>"; };
+		AA47A43A205EC8F700286DD7 /* RadioStationTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioStationTableViewController.swift; sourceTree = "<group>"; };
+		AA47A43C205EC91900286DD7 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
+		AA47A43E205EDA4600286DD7 /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		AA47A440205EDA5600286DD7 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		AA47A442205EDA5C00286DD7 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		AA47A4442066BAB200286DD7 /* GenresTableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenresTableViewCellController.swift; sourceTree = "<group>"; };
+		AA59E4662069721D00B4F5A9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AA9DC3DB206816C900D9EF32 /* RadioStationTableViewCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioStationTableViewCellController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +76,23 @@
 		AA47A41C205D8D1C00286DD7 /* radioPlaylists */ = {
 			isa = PBXGroup;
 			children = (
+				AA47A438205E8A6800286DD7 /* GenresTableViewController.swift */,
+				AA9DC3DB206816C900D9EF32 /* RadioStationTableViewCellController.swift */,
+				AA47A440205EDA5600286DD7 /* play.png */,
+				AA47A442205EDA5C00286DD7 /* pause.png */,
 				AA47A41D205D8D1C00286DD7 /* AppDelegate.swift */,
 				AA47A41F205D8D1C00286DD7 /* ViewController.swift */,
+				AA47A436205D9EEE00286DD7 /* star.png */,
+				AA47A43E205EDA4600286DD7 /* stop.png */,
 				AA47A421205D8D1C00286DD7 /* Main.storyboard */,
 				AA47A427205D8D1C00286DD7 /* Assets.xcassets */,
 				AA47A429205D8D1C00286DD7 /* LaunchScreen.storyboard */,
 				AA47A42C205D8D1C00286DD7 /* Info.plist */,
 				AA47A424205D8D1C00286DD7 /* radioPlaylists.xcdatamodeld */,
+				AA47A43A205EC8F700286DD7 /* RadioStationTableViewController.swift */,
+				AA47A43C205EC91900286DD7 /* FavoritesTableViewController.swift */,
+				AA47A4442066BAB200286DD7 /* GenresTableViewCellController.swift */,
+				AA59E4662069721D00B4F5A9 /* DetailViewController.swift */,
 			);
 			path = radioPlaylists;
 			sourceTree = "<group>";
@@ -127,8 +157,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AA47A42B205D8D1C00286DD7 /* LaunchScreen.storyboard in Resources */,
+				AA47A43F205EDA4600286DD7 /* stop.png in Resources */,
+				AA47A437205D9EEE00286DD7 /* star.png in Resources */,
+				AA47A443205EDA5C00286DD7 /* pause.png in Resources */,
 				AA47A428205D8D1C00286DD7 /* Assets.xcassets in Resources */,
 				AA47A423205D8D1C00286DD7 /* Main.storyboard in Resources */,
+				AA47A441205EDA5600286DD7 /* play.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,9 +173,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA59E4672069721D00B4F5A9 /* DetailViewController.swift in Sources */,
+				AA47A43B205EC8F700286DD7 /* RadioStationTableViewController.swift in Sources */,
 				AA47A420205D8D1C00286DD7 /* ViewController.swift in Sources */,
+				AA47A439205E8A6800286DD7 /* GenresTableViewController.swift in Sources */,
+				AA9DC3DC206816C900D9EF32 /* RadioStationTableViewCellController.swift in Sources */,
 				AA47A41E205D8D1C00286DD7 /* AppDelegate.swift in Sources */,
+				AA47A43D205EC91900286DD7 /* FavoritesTableViewController.swift in Sources */,
 				AA47A426205D8D1C00286DD7 /* radioPlaylists.xcdatamodeld in Sources */,
+				AA47A4452066BAB200286DD7 /* GenresTableViewCellController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
