@@ -69,19 +69,20 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5t8-ie-RhV">
                                             <rect key="frame" x="100" y="39" width="232" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="232" id="hlS-X0-PJY"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                             <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="trailingMargin" secondItem="5t8-ie-RhV" secondAttribute="trailing" constant="27" id="6so-YZ-xAX"/>
+                                        <constraint firstItem="fc4-TI-E2k" firstAttribute="top" secondItem="kYd-3d-5ue" secondAttribute="topMargin" constant="9" id="75f-pC-ieh"/>
                                         <constraint firstItem="5t8-ie-RhV" firstAttribute="leading" secondItem="fc4-TI-E2k" secondAttribute="trailing" constant="22" id="E2d-CM-q7N"/>
-                                        <constraint firstItem="fc4-TI-E2k" firstAttribute="top" secondItem="kYd-3d-5ue" secondAttribute="topMargin" constant="9" id="MzE-aF-aPC"/>
-                                        <constraint firstItem="fc4-TI-E2k" firstAttribute="centerY" secondItem="kYd-3d-5ue" secondAttribute="centerY" id="YXZ-AF-4ds"/>
-                                        <constraint firstItem="5t8-ie-RhV" firstAttribute="centerY" secondItem="kYd-3d-5ue" secondAttribute="centerY" id="gD5-SH-09p"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="5t8-ie-RhV" secondAttribute="bottom" constant="30" id="pKd-od-Z5H"/>
-                                        <constraint firstItem="fc4-TI-E2k" firstAttribute="leading" secondItem="kYd-3d-5ue" secondAttribute="leadingMargin" constant="2" id="yV6-cs-iJf"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="5t8-ie-RhV" secondAttribute="bottom" constant="30" id="JMg-vS-DL4"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="5t8-ie-RhV" secondAttribute="trailing" constant="27" id="Wda-cU-1Ys"/>
+                                        <constraint firstItem="5t8-ie-RhV" firstAttribute="centerY" secondItem="kYd-3d-5ue" secondAttribute="centerY" id="o2M-rw-V0D"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -89,7 +90,6 @@
                                 <connections>
                                     <outlet property="genreImg" destination="fc4-TI-E2k" id="B6D-1s-EYh"/>
                                     <outlet property="lblTitle" destination="5t8-ie-RhV" id="F5V-jP-lUw"/>
-                                    <segue destination="FCi-jR-YHf" kind="show" identifier="segueToStations" id="rrW-YW-BwM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -105,6 +105,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="FCi-jR-YHf" kind="show" identifier="segueToStations" id="fjv-4C-hsd"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgm-Rl-1lH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -113,21 +116,45 @@
         <!--Emisoras-->
         <scene sceneID="8Pj-4o-rn7">
             <objects>
-                <tableViewController id="FCi-jR-YHf" customClass="RadioStationViewController" customModule="radioPlaylists" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="FCi-jR-YHf" customClass="RadioStationTableViewController" customModule="radioPlaylists" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sds-jJ-lP2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="stationCell" id="w3s-ga-pJs">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="stationCell" rowHeight="100" id="w3s-ga-pJs" customClass="RadioStationTableViewCellController" customModule="radioPlaylists" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="w3s-ga-pJs" id="aKs-wD-Ldm">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JwX-pe-6Wu" userLabel="stationImg">
+                                            <rect key="frame" x="18" y="20" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="ClJ-pT-fAl"/>
+                                                <constraint firstAttribute="height" constant="60" id="Tna-Q0-OEB"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koZ-7Q-pvT" userLabel="name">
+                                            <rect key="frame" x="100" y="39" width="232" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="koZ-7Q-pvT" secondAttribute="bottom" constant="50" id="Ghx-bU-o3g"/>
+                                        <constraint firstItem="JwX-pe-6Wu" firstAttribute="top" secondItem="aKs-wD-Ldm" secondAttribute="topMargin" constant="9" id="H0Y-6V-sko"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="koZ-7Q-pvT" secondAttribute="trailing" constant="27" id="M0f-BV-pof"/>
+                                        <constraint firstItem="koZ-7Q-pvT" firstAttribute="top" secondItem="aKs-wD-Ldm" secondAttribute="topMargin" constant="28" id="VsH-RL-gN8"/>
+                                        <constraint firstItem="JwX-pe-6Wu" firstAttribute="leading" secondItem="aKs-wD-Ldm" secondAttribute="leadingMargin" constant="2" id="nY3-ee-4CN"/>
+                                        <constraint firstItem="koZ-7Q-pvT" firstAttribute="leading" secondItem="JwX-pe-6Wu" secondAttribute="trailing" constant="22" id="zV5-r7-OZL"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="hxi-Io-gOO" kind="show" identifier="segueStationDetail" id="H1N-GN-7pB"/>
+                                    <outlet property="img" destination="JwX-pe-6Wu" id="2ji-0y-RP9"/>
+                                    <outlet property="name" destination="koZ-7Q-pvT" id="dh4-VS-cLi"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -137,41 +164,55 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Emisoras" id="iAO-Wd-w0b"/>
+                    <connections>
+                        <segue destination="hxi-Io-gOO" kind="show" identifier="segueToDetail" id="tcA-36-76S"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cFe-uF-fag" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886" y="1160"/>
+            <point key="canvasLocation" x="885.60000000000002" y="1159.9700149925038"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="CPX-F4-axI">
             <objects>
-                <viewController id="hxi-Io-gOO" sceneMemberID="viewController">
+                <viewController id="hxi-Io-gOO" customClass="DetailViewController" customModule="radioPlaylists" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zOd-ek-nrI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rZs-hJ-MQn">
-                                <rect key="frame" x="67" y="130" width="240" height="128"/>
+                                <rect key="frame" x="67" y="125" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7BF-cJ-6X9">
-                                <rect key="frame" x="217" y="266" width="40" height="40"/>
+                                <rect key="frame" x="217" y="270" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="stop.png"/>
+                                <connections>
+                                    <action selector="stopAction:" destination="hxi-Io-gOO" eventType="touchUpInside" id="60Y-Bm-E3c"/>
+                                </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5gt-gQ-xVD">
                                 <rect key="frame" x="65" y="356" width="259" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rGr-Gj-6vm">
-                                <rect key="frame" x="121" y="266" width="40" height="40"/>
+                                <rect key="frame" x="121" y="270" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="play.png"/>
+                                <connections>
+                                    <action selector="playAction:" destination="hxi-Io-gOO" eventType="touchUpInside" id="gWA-hd-emD"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="iDs-s7-IhQ"/>
                     </view>
+                    <connections>
+                        <outlet property="playBtn" destination="rGr-Gj-6vm" id="sHD-aG-PYB"/>
+                        <outlet property="radioImg" destination="rZs-hJ-MQn" id="N22-zg-ZIX"/>
+                        <outlet property="volumenaSlider" destination="5gt-gQ-xVD" id="odU-bc-nni"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b6S-Xj-cXj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -225,7 +266,7 @@
         <image name="stop.png" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7Pg-fY-cUc"/>
-        <segue reference="rrW-YW-BwM"/>
+        <segue reference="tcA-36-76S"/>
+        <segue reference="fjv-4C-hsd"/>
     </inferredMetricsTieBreakers>
 </document>
