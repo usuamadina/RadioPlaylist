@@ -14,21 +14,48 @@
         <!-- Favoritos-->
         <scene sceneID="hyi-7j-mP4">
             <objects>
-                <tableViewController title=" Favoritos" id="xS6-eg-dnW" customClass="FavoritesViewController" customModule="radioPlaylists" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title=" Favoritos" id="xS6-eg-dnW" customClass="FavoritesTableViewController" customModule="radioPlaylists" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="CY9-Jp-wdB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favCell" id="Lzz-mo-43R">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favCell" rowHeight="100" id="Lzz-mo-43R" customClass="FavoritesTableViewCellController" customModule="radioPlaylists" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Lzz-mo-43R" id="qUd-64-wJm">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pLR-nv-ONf">
+                                            <rect key="frame" x="18" y="20" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="60" id="Kf6-2R-eIQ"/>
+                                                <constraint firstAttribute="width" constant="60" id="leb-HK-oaY"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcu-v5-Rl0">
+                                            <rect key="frame" x="100" y="39" width="232" height="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Rcu-v5-Rl0" secondAttribute="bottom" constant="30" id="0an-rC-xJH"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Rcu-v5-Rl0" secondAttribute="trailing" constant="27" id="4Gh-z0-yeL"/>
+                                        <constraint firstItem="pLR-nv-ONf" firstAttribute="leading" secondItem="qUd-64-wJm" secondAttribute="leadingMargin" constant="2" id="Jmc-qP-78n"/>
+                                        <constraint firstItem="pLR-nv-ONf" firstAttribute="top" secondItem="qUd-64-wJm" secondAttribute="topMargin" constant="9" id="Nrt-PK-4Zf"/>
+                                        <constraint firstItem="Rcu-v5-Rl0" firstAttribute="leading" secondItem="pLR-nv-ONf" secondAttribute="trailing" constant="22" id="Pqd-ny-ZXc"/>
+                                        <constraint firstItem="Rcu-v5-Rl0" firstAttribute="centerY" secondItem="qUd-64-wJm" secondAttribute="centerY" id="nQJ-1f-CXb"/>
+                                        <constraint firstItem="pLR-nv-ONf" firstAttribute="centerY" secondItem="qUd-64-wJm" secondAttribute="centerY" id="ozv-uR-kq0"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="hxi-Io-gOO" kind="show" identifier="segueFavDetail" id="7Pg-fY-cUc"/>
+                                    <outlet property="favImg" destination="pLR-nv-ONf" id="hWw-cd-VRZ"/>
+                                    <outlet property="favLbl" destination="Rcu-v5-Rl0" id="h5K-ze-34c"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -37,10 +64,13 @@
                             <outlet property="delegate" destination="xS6-eg-dnW" id="jmL-xg-AQi"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="hxi-Io-gOO" kind="show" identifier="segueFavDetail" id="m3l-ht-JVO"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QBk-ZG-v8A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1830" y="298"/>
+            <point key="canvasLocation" x="1829.5999999999999" y="297.30134932533736"/>
         </scene>
         <!--Géneros-->
         <scene sceneID="5Ou-xL-mLb">
@@ -326,7 +356,7 @@
         <image name="starAdd.png" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7Pg-fY-cUc"/>
+        <segue reference="m3l-ht-JVO"/>
         <segue reference="fjv-4C-hsd"/>
     </inferredMetricsTieBreakers>
 </document>
