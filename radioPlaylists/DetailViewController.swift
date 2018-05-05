@@ -8,6 +8,7 @@
 
 import UIKit
 import AVKit
+import CoreData
 
 class DetailViewController: UIViewController {
 
@@ -17,33 +18,40 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var playBtn: UIButton!
     @IBOutlet weak var volumenaSlider: UISlider!
     
+    
+    @IBOutlet weak var radioNameLbl: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        radioNameLbl.text = selectedStation.stationName
+        downloadRadioStationImg()
         
         do
         {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            print("AVAudioSession ready to play")
+            print("AVAudioSession ready to play!!")
             do
             {
                 try AVAudioSession.sharedInstance().setActive(true)
                 print("AVAudioSession active")
             }
-            catch
+            catch let error as NSError
             {
-                
+                print(error.localizedDescription)
             }
             
         }
         catch let error as NSError
         {
-            print(error.localizedDescription)
+           print(error.localizedDescription)
+            
         }
 
         // Do any additional setup after loading the view.
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool)
+    {
        /* let url = URL(string:selectedStation.streamUrl)!
         
         do
@@ -57,10 +65,27 @@ class DetailViewController: UIViewController {
         
     }
 
-    @IBAction func stopAction(_ sender: Any) {
+    
+  
+    
+    @IBAction func playAction(_ sender: UIButton)
+    {
+        print(selectedStation.streamUrl)
+        player = AVPlayer(url: URL(string: selectedStation.streamUrl)!)
+        player.volume = 1.0
+        print("reproduciendo")
+        player.play()
+        
     }
     
-    @IBAction func playAction(_ sender: Any) {
+    @IBAction func pauseAction(_ sender: UIButton)
+    {
+        player.pause()
+    }
+    
+    @IBAction func volumenChangedAction(_ sender: UISlider)
+    {
+        player.volume = sender.value
     }
     
     
@@ -69,15 +94,90 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func downloadRadioStationImg()
+    {
+        let url = URL(string:selectedStation.imgUrl)!
+        let request = NSMutableURLRequest(url:url)
+        let task = URLSession.shared.dataTask(with: request as URLRequest)
+        {
+            data, response, error in
+            if error != nil
+            {
+                print(error as Any)
+            }
+            else
+            {
+                if let dataUnwrapped = data
+                {
+                    if let imgStation = UIImage(data: dataUnwrapped)
+                    {
+                        DispatchQueue.main.async {
+                            self.radioImg.image = imgStation
+                        }
+                        
+                    }
+                    
+                }
+                
+            }
+        }
+        task.resume()
     }
-    */
-
+    
+    
+    @IBAction func addFavAction(_ sender: Any)
+    {
+        var stationSaved = false
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "RadioStations")
+        request.returnsObjectsAsFaults = false
+        
+        
+        do
+        {
+            let results = try context.fetch(request)
+            for result in results as! [NSManagedObject]
+            {
+                if let stationName = result.value(forKey: "stationName") as? String
+                {
+                    if stationName == selectedStation.stationName
+                    {
+                        print("Station already add to favs")
+                        stationSaved = true
+                    }
+                    
+                }
+            }
+        }
+        catch
+        {
+            print("Error fetching data")
+        }
+        
+        
+        if (!stationSaved)
+        {
+           
+            // SAVE A STATION ON PERSISTANCE
+            let radioStation = NSEntityDescription.insertNewObject(forEntityName: "RadioStations", into: context)
+            radioStation.setValue(selectedStation.imgUrl, forKey: "imgUrl")
+            radioStation.setValue(selectedStation.stationName, forKey: "stationName")
+            radioStation.setValue(selectedStation.streamUrl, forKey: "streamUrl")
+            
+            do
+            {
+                try context.save()
+                print("Radio station added to favs successfully")
+            }
+            catch
+            {
+                print("An error ocurred while saving the station")
+            }
+        }
+        
+        
+    }
+    
 }
