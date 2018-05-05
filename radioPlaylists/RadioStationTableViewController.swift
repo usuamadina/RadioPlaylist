@@ -122,8 +122,7 @@ class RadioStationTableViewController: UITableViewController {
   
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        print(stationList.count)
+      
          return stationList.count
     }
 
@@ -132,7 +131,6 @@ class RadioStationTableViewController: UITableViewController {
         
          let cell = tableView.dequeueReusableCell(withIdentifier: "stationCell", for: indexPath) as! RadioStationTableViewCellController
         
-      //  let cell = tableView.dequeueReusableCell(withIdentifier: "stationCell", for: indexPath) as! RadioStationTableViewCellController
         
         let url = URL(string:stationList[indexPath.row].imgUrl)!
         let request = NSMutableURLRequest(url:url)
