@@ -36,7 +36,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcu-v5-Rl0">
-                                            <rect key="frame" x="100" y="39" width="232" height="20"/>
+                                            <rect key="frame" x="100" y="39" width="47" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -44,13 +44,11 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Rcu-v5-Rl0" secondAttribute="bottom" constant="30" id="0an-rC-xJH"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Rcu-v5-Rl0" secondAttribute="trailing" constant="27" id="4Gh-z0-yeL"/>
-                                        <constraint firstItem="pLR-nv-ONf" firstAttribute="leading" secondItem="qUd-64-wJm" secondAttribute="leadingMargin" constant="2" id="Jmc-qP-78n"/>
-                                        <constraint firstItem="pLR-nv-ONf" firstAttribute="top" secondItem="qUd-64-wJm" secondAttribute="topMargin" constant="9" id="Nrt-PK-4Zf"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Rcu-v5-Rl0" secondAttribute="bottom" constant="30" id="Frc-LK-6Rp"/>
                                         <constraint firstItem="Rcu-v5-Rl0" firstAttribute="leading" secondItem="pLR-nv-ONf" secondAttribute="trailing" constant="22" id="Pqd-ny-ZXc"/>
-                                        <constraint firstItem="Rcu-v5-Rl0" firstAttribute="centerY" secondItem="qUd-64-wJm" secondAttribute="centerY" id="nQJ-1f-CXb"/>
-                                        <constraint firstItem="pLR-nv-ONf" firstAttribute="centerY" secondItem="qUd-64-wJm" secondAttribute="centerY" id="ozv-uR-kq0"/>
+                                        <constraint firstItem="Rcu-v5-Rl0" firstAttribute="centerY" secondItem="qUd-64-wJm" secondAttribute="centerY" id="TPS-UR-bDC"/>
+                                        <constraint firstItem="pLR-nv-ONf" firstAttribute="leading" secondItem="qUd-64-wJm" secondAttribute="leadingMargin" constant="2" id="kAl-ix-dfB"/>
+                                        <constraint firstItem="pLR-nv-ONf" firstAttribute="centerY" secondItem="qUd-64-wJm" secondAttribute="centerY" id="zAx-7O-tuR"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -151,6 +149,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="stationCell" rowHeight="100" id="w3s-ga-pJs" customClass="RadioStationTableViewCellController" customModule="radioPlaylists" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
@@ -168,11 +169,12 @@
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="koZ-7Q-pvT" userLabel="name">
                                             <rect key="frame" x="100" y="39" width="232" height="0.0"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="bottomMargin" secondItem="koZ-7Q-pvT" secondAttribute="bottom" constant="50" id="Ghx-bU-o3g"/>
                                         <constraint firstItem="JwX-pe-6Wu" firstAttribute="top" secondItem="aKs-wD-Ldm" secondAttribute="topMargin" constant="9" id="H0Y-6V-sko"/>
@@ -182,6 +184,7 @@
                                         <constraint firstItem="koZ-7Q-pvT" firstAttribute="leading" secondItem="JwX-pe-6Wu" secondAttribute="trailing" constant="22" id="zV5-r7-OZL"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="img" destination="JwX-pe-6Wu" id="2ji-0y-RP9"/>
                                     <outlet property="name" destination="koZ-7Q-pvT" id="dh4-VS-cLi"/>
@@ -272,7 +275,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="iHo-ia-zOp" firstAttribute="top" secondItem="iDs-s7-IhQ" secondAttribute="top" constant="15" id="65J-8m-MPm"/>
@@ -356,7 +359,7 @@
         <image name="starAdd.png" width="64" height="64"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="m3l-ht-JVO"/>
+        <segue reference="tcA-36-76S"/>
         <segue reference="fjv-4C-hsd"/>
     </inferredMetricsTieBreakers>
 </document>
