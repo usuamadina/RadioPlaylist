@@ -35,8 +35,10 @@ class GenresTableViewController: UITableViewController{
     
     override func viewDidAppear(_ animated: Bool)
     {
-        let url = URL(string: "https://ia800505.us.archive.org/4/items/03.InternetRadioStationJson/03.InternetRadioStationJson.txt")!
-      
+        list = [GenderStruct]()
+        categoryNameList = Array<String>()
+        
+        let url = URL(string: "https://ia800505.us.archive.org/4/items/03.InternetRadioStationJson/03.InternetRadioStationJson.txt")!      
         
         // let request = NSMutableURLRequest(url:url)
         

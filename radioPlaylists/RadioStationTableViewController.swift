@@ -48,10 +48,10 @@ class RadioStationTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
+        stationNameList = Array<String>()
+        stationList = [StationStruct]()
+        
         let url = URL(string: "https://ia800505.us.archive.org/4/items/03.InternetRadioStationJson/03.InternetRadioStationJson.txt")!
-        
-        
-        // let request = NSMutableURLRequest(url:url)
         
         let task = URLSession.shared.dataTask(with: url)
         {
@@ -102,7 +102,7 @@ class RadioStationTableViewController: UITableViewController {
                     }
                     catch
                     {
-                        print("Error procesando el json")
+                        print("Error processing JSON")
                     }
                     
                 }
